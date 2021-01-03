@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PWA ZADATAK</title>
+    <meta name="author" content="Marko Ivkovic">
+    <meta name="description" content="Beautifuly designed Progressive Web Application for Material Color Palette.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--LINKOVANJE MANIFESTA-->
+    <link rel="manifest" href="functions/manifest.json">
+    <link rel="stylesheet" href="styles/index.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:500,700" rel="stylesheet">
+    <link href="assets/favicon.ico" rel="icon" sizes="192x192">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/favicon.ico">
+</head>
+
+<body>
+    
+    <section id="header">
+        <!--OVDE JE ONLINE STATUS-->
+    <script>
+        window.addEventListener("offline", offLine);
+        window.addEventListener("online", online);
+        function offLine(){
+            console.log("Trenutno ste offline");
+        }
+        
+        function online(){
+            console.log("Trenutno ste online");
+        }
+    </script>
+        <div class="search-wrapper">
+            <div class="search-overlay"></div>
+            <div class="search-bar">
+                <svg class="nav-btn" xmlns="https://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                    <path d="M0 0h48v48H0z" fill="none" />
+                    <path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z" />
+                </svg>
+                <svg class="back-btn" xmlns="https://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                    <path d="M0 0h48v48H0z" fill="none" />
+                    <path d="M40 22H15.66l11.17-11.17L24 8 8 24l16 16 2.83-2.83L15.66 26H40v-4z" />
+                </svg>
+                <input autocomplete="off" id="myinput" onkeyup="searchFunction()" class="search-text-field" type="text" name="search" value="" placeholder="Search">
+                <svg class="search-btn" xmlns="https://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                    <path d="M31 28h-1.59l-.55-.55C30.82 25.18 32 22.23 32 19c0-7.18-5.82-13-13-13S6 11.82 6 19s5.82 13 13 13c3.23 0 6.18-1.18 8.45-3.13l.55.55V31l10 9.98L40.98 38 31 28zm-12 0c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z" />
+                    <path d="M0 0h48v48H0z" fill="none" />
+                </svg>
+                <svg class="search-close-btn" xmlns="https://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                    <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z" />
+                    <path d="M0 0h48v48H0z" fill="none" />
+                </svg>
+            </div>
+        </div>
+        <section id="color-chips">
+            <ul class="chips-list">
+                <li class="chips color-selected">
+                    <h1 style="color: #fff;">all</h1>
+                </li>
+                <li class="chips">
+                    <h1>red</h1>
+                </li>
+                <li class="chips">
+                    <h1>pink</h1>
+                </li>
+                <li class="chips">
+                    <h1>purple</h1>
+                </li>
+                <li class="chips">
+                    <h1>deep-purple</h1>
+                </li>
+                <li class="chips">
+                    <h1>indigo</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">blue</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">light-blue</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">cyan</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">teal</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">green</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">light-green</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">lime</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">yellow</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">amber</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">orange</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">deep-orange</h1>
+                </li>
+                <li class="chips">
+                    <h1>brown</h1>
+                </li>
+                <li class="chips">
+                    <h1 class="dark-shade">grey</h1>
+                </li>
+                <li class="chips">
+                    <h1>blue-grey</h1>
+                </li>
+            </ul>
+        </section>
+    
+    </script>
+    </section>
+    
+    <section id="wrapper">
+        <ul id="grid-wrapper">
+            <li class="card red">
+                <a href="#" class="color-title">Red</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#FFEBEE</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#FFCDD2</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#EF9A9A</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#E57373</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">400</span>
+                            <span class="hex">#EF5350</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#F44336</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#E53935</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#D32F2F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#C62828</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#B71C1C</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#FF8A80</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A200</span>
+                            <span class="hex">#FF5252</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A400</span>
+                            <span class="hex">#FF1744</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#D50000</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card pink">
+                <a href="#" class="color-title">Pink </a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#FCE4EC</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#F8BBD0</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#F48FB1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#F06292</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">400</span>
+                            <span class="hex">#EC407A</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#E91E63</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#D81B60</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#C2185B</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#AD1457</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#880E4F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#FF80AB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A200</span>
+                            <span class="hex">#FF4081</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A400</span>
+                            <span class="hex">#F50057</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#C51162</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card purple">
+                <a href="#" class="color-title">Purple</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#F3E5F5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#E1BEE7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#CE93D8</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">300</span>
+                            <span class="hex">#BA68C8</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">400</span>
+                            <span class="hex">#AB47BC</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#9C27B0</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#8E24AA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#7B1FA2</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#6A1B9A</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#4A148C</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#EA80FC</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A200</span>
+                            <span class="hex">#E040FB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A400</span>
+                            <span class="hex">#D500F9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#AA00FF</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card deep-purple">
+                <a href="#" class="color-title"> Deep Purple</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#EDE7F6</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#D1C4E9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#B39DDB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#9575CD</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">400</span>
+                            <span class="hex">#7E57C2</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#673AB7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#5E35B1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#512DA8</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#4527A0</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#311B92</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#B388FF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A200</span>
+                            <span class="hex">#7C4DFF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A400</span>
+                            <span class="hex">#651FFF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#6200EA</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card indigo">
+                <a href="#" class="color-title"> Indigo</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#E8EAF6</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#C5CAE9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#9FA8DA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">300</span>
+                            <span class="hex">#7986CB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">400</span>
+                            <span class="hex">#5C6BC0</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#3F51B5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#3949AB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#303F9F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#283593</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#1A237E</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#8C9EFF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A200</span>
+                            <span class="hex">#536DFE</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A400</span>
+                            <span class="hex">#3D5AFE</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#304FFE</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card blue">
+                <a href="#" class="color-title"> Blue</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#E3F2FD</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#BBDEFB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#90CAF9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#64B5F6</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#42A5F5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#2196F3</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#1E88E5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#1976D2</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#1565C0</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#0D47A1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#82B1FF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A200</span>
+                            <span class="hex">#448AFF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A400</span>
+                            <span class="hex">#2979FF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#2962FF</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card light-blue">
+                <a href="#" class="color-title"> Light Blue</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#E1F5FE</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#B3E5FC</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#81D4FA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#4FC3F7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#29B6F6</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#03A9F4</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">600</span>
+                            <span class="hex">#039BE5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#0288D1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#0277BD</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#01579B</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#80D8FF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#40C4FF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#00B0FF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#0091EA</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card cyan">
+                <a href="#" class="color-title"> Cyan</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#E0F7FA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#B2EBF2</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#80DEEA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#4DD0E1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#26C6DA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#00BCD4</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">600</span>
+                            <span class="hex">#00ACC1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#0097A7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#00838F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#006064</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#84FFFF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#18FFFF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#00E5FF</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#00B8D4</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card teal">
+                <a href="#" class="color-title"> Teal</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#E0F2F1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#B2DFDB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#80CBC4</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#4DB6AC</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#26A69A</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#009688</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#00897B</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#00796B</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#00695C</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#004D40</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#A7FFEB</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#64FFDA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#1DE9B6</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#00BFA5</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card green">
+                <a href="#" class="color-title"> Green</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#E8F5E9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#C8E6C9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#A5D6A7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#81C784</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#66BB6A</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#4CAF50</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#43A047</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#388E3C</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#2E7D32</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#1B5E20</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#B9F6CA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#69F0AE</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#00E676</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#00C853</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card light-green">
+                <a href="#" class="color-title"> Light Green</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#F1F8E9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#DCEDC8</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#C5E1A5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#AED581</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#9CCC65</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#8BC34A</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">600</span>
+                            <span class="hex">#7CB342</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">700</span>
+                            <span class="hex">#689F38</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details ">
+                            <span class="shade">800</span>
+                            <span class="hex">#558B2F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details ">
+                            <span class="shade">900</span>
+                            <span class="hex">#33691E</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#CCFF90</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#B2FF59</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#76FF03</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#64DD17</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card lime">
+                <a href="#" class="color-title"> Lime</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#F9FBE7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#F0F4C3</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#E6EE9C</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#DCE775</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#D4E157</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#CDDC39</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">600</span>
+                            <span class="hex">#C0CA33</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">700</span>
+                            <span class="hex">#AFB42B</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">800</span>
+                            <span class="hex">#9E9D24</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#827717</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#F4FF81</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#EEFF41</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#C6FF00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#AEEA00</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card yellow">
+                <a href="#" class="color-title"> Yellow</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#FFFDE7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#FFF9C4</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#FFF59D</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#FFF176</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#FFEE58</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#FFEB3B</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">600</span>
+                            <span class="hex">#FDD835</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">700</span>
+                            <span class="hex">#FBC02D</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">800</span>
+                            <span class="hex">#F9A825</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">900</span>
+                            <span class="hex">#F57F17</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#FFFF8D</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#FFFF00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#FFEA00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#FFD600</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card amber">
+                <a href="#" class="color-title"> Amber</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#FFF8E1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#FFECB3</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#FFE082</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#FFD54F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#FFCA28</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#FFC107</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">600</span>
+                            <span class="hex">#FFB300</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">700</span>
+                            <span class="hex">#FFA000</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">800</span>
+                            <span class="hex">#FF8F00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">900</span>
+                            <span class="hex">#FF6F00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#FFE57F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#FFD740</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#FFC400</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#FFAB00</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card orange">
+                <a href="#" class="color-title">Orange</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#FFF3E0</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#FFE0B2</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#FFCC80</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#FFB74D</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#FFA726</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#FF9800</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">600</span>
+                            <span class="hex">#FB8C00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">700</span>
+                            <span class="hex">#F57C00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">800</span>
+                            <span class="hex">#EF6C00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details ">
+                            <span class="shade">900</span>
+                            <span class="hex">#E65100</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#FFD180</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#FFAB40</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A400</span>
+                            <span class="hex">#FF9100</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A700</span>
+                            <span class="hex">#FF6D00</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="card deep-orange">
+                <a href="#" class="color-title"> Deep Orange</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#FBE9E7</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#FFCCBC</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#FFAB91</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#FF8A65</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#FF7043</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#FF5722</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#F4511E</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#E64A19</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#D84315</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#BF360C</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A100</span>
+                            <span class="hex">#FF9E80</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">A200</span>
+                            <span class="hex">#FF6E40</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A400</span>
+                            <span class="hex">#FF3D00</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">A700</span>
+                            <span class="hex">#DD2C00</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card brown">
+                <a href="#" class="color-title"> Brown</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#EFEBE9</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#D7CCC8</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#BCAAA4</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">300</span>
+                            <span class="hex">#A1887F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">400</span>
+                            <span class="hex">#8D6E63</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#795548</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#6D4C41</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#5D4037</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#4E342E</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#3E2723</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card grey">
+                <a href="#" class="color-title"> Grey</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#FAFAFA</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#F5F5F5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#EEEEEE</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#E0E0E0</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">400</span>
+                            <span class="hex">#BDBDBD</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">500</span>
+                            <span class="hex">#9E9E9E</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#757575</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#616161</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#424242</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#212121</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="card blue-grey">
+                <a href="#" class="color-title"> Blue Grey</a>
+                <div class="color-wrapper">
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">50</span>
+                            <span class="hex">#ECEFF1</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">100</span>
+                            <span class="hex">#CFD8DC</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">200</span>
+                            <span class="hex">#B0BEC5</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details dark-shade">
+                            <span class="shade">300</span>
+                            <span class="hex">#90A4AE</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">400</span>
+                            <span class="hex">#78909C</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">500</span>
+                            <span class="hex">#607D8B</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">600</span>
+                            <span class="hex">#546E7A</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">700</span>
+                            <span class="hex">#455A64</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">800</span>
+                            <span class="hex">#37474F</span>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <div class="details">
+                            <span class="shade">900</span>
+                            <span class="hex">#263238</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <svg class="fab" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+        </svg>
+        <div class="snack"></div>
+    </section>
+    
+</body>
+<script src="functions/jquery.min.js"></script>
+<script src="functions/index.js"></script>
+<script src="service-worker.js"></script>
+
+</html>
